@@ -1,0 +1,7 @@
+version_settings(check_updates=True, constraint='>=0.30.0')
+
+docker_build('brunopadz/node-mocked-api', '.')
+
+allow_k8s_contexts('eks-tools')
+k8s_yaml('.infra/install.yaml')
+k8s_resource('api-deployment', port_forwards=3000)

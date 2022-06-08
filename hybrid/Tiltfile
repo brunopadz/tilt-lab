@@ -1,1 +1,0 @@
-version_settings(check_updates=True, constraint='>=0.30.0')
